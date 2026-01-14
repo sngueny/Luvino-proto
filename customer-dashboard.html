@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard - Luvino</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="index.html" class="logo">Luvino<span class="span">.</span></a>
+      </h1>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="nav-item">
+            <a href="#dashboard" class="navbar-link active" data-nav-link>Dashboard</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#stores" class="navbar-link" data-nav-link>Stores</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#cart" class="navbar-link" data-nav-link>Cart</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#orders" class="navbar-link" data-nav-link>Orders</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#profile" class="navbar-link" data-nav-link>Profile</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="header-btn-group">
+        <button class="btn btn-hover">Logout</button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Dashboard Overview -->
+    <section id="dashboard" class="section dashboard-section">
+      <div class="container">
+        <h2 class="h2 section-title">Dashboard</h2>
+        <div class="dashboard-grid">
+          <div class="dashboard-card">
+            <h3>Total Orders</h3>
+            <p>15</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Active Orders</h3>
+            <p>2</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Cart Items</h3>
+            <p>5</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Favorite Stores</h3>
+            <p>8</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stores -->
+    <section id="stores" class="section stores-section">
+      <div class="container">
+        <h2 class="h2 section-title">All Stores</h2>
+        <div class="stores-grid">
+          <div class="store-card">
+            <img src="./assets/images/store1.jpg" alt="Store 1">
+            <h3>Store Name 1</h3>
+            <p>Fast food restaurant</p>
+            <button class="btn">View Menu</button>
+          </div>
+          <div class="store-card">
+            <img src="./assets/images/store2.jpg" alt="Store 2">
+            <h3>Store Name 2</h3>
+            <p>Italian cuisine</p>
+            <button class="btn">View Menu</button>
+          </div>
+          <!-- More stores -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart -->
+    <section id="cart" class="section cart-section">
+      <div class="container">
+        <h2 class="h2 section-title">Your Cart</h2>
+        <div class="cart-items">
+          <div class="cart-item">
+            <img src="./assets/images/item1.jpg" alt="Item 1">
+            <div>
+              <h4>Item Name</h4>
+              <p>KES10.00</p>
+              <input type="number" value="1" min="1">
+            </div>
+            <button class="btn">Remove</button>
+          </div>
+          <!-- More items -->
+        </div>
+        <div class="cart-total">
+          <p>Total: KES50.00</p>
+          <button class="btn">Checkout</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Orders -->
+    <section id="orders" class="section orders-section">
+      <div class="container">
+        <h2 class="h2 section-title">Your Orders</h2>
+        <div class="orders-list">
+          <div class="order-card">
+            <h4>Order #12345</h4>
+            <p>Status: In Transit</p>
+            <p>Estimated Delivery: 30 mins</p>
+            <button class="btn">Track Order</button>
+          </div>
+          <!-- More orders -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile -->
+    <section id="profile" class="section profile-section">
+      <div class="container">
+        <h2 class="h2 section-title">Profile</h2>
+        <form class="profile-form">
+          <input type="text" placeholder="Full Name" value="John Doe">
+          <input type="email" placeholder="Email" value="john@example.com">
+          <input type="tel" placeholder="Phone Number" value="+1234567890">
+          <input type="text" placeholder="Street Address" value="123 Main St">
+          <input type="text" placeholder="City" value="New York">
+          <input type="text" placeholder="State" value="NY">
+          <input type="text" placeholder="Zip Code" value="10001">
+          <button type="submit" class="btn">Update Profile</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Live Tracking -->
+    <section class="section tracking-section">
+      <div class="container">
+        <h2 class="h2 section-title">Live Order Tracking</h2>
+        <div class="tracking-map">
+          <!-- Placeholder for map -->
+          <div class="map-placeholder">
+            <p>Map integration would go here</p>
+            <p>Order Status: Rider is 5 mins away</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery Scheduling -->
+    <section class="section scheduling-section">
+      <div class="container">
+        <h2 class="h2 section-title">Delivery Scheduling</h2>
+        <form class="scheduling-form">
+          <input type="datetime-local" required>
+          <textarea placeholder="Special instructions"></textarea>
+          <button type="submit" class="btn">Schedule Delivery</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Payment -->
+    <section class="section payment-section">
+      <div class="container">
+        <h2 class="h2 section-title">Payment Integration</h2>
+        <div class="payment-options">
+          <button class="btn payment-btn">Pay with Card</button>
+          <button class="btn payment-btn">Pay with PayPal</button>
+          <button class="btn payment-btn">Cash on Delivery</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top" style="background-image: url('./assets/images/footer-illustration.png')">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="" class="logo">Foodie<span class="span">.</span></a>
+
+          <p class="footer-text">
+            Lorep Ipsum is a widely use placeholder text.
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <p class="app-coming-soon">App coming Soon</p>
+
+          <ul class="app-store-list">
+
+            <li>
+              <a href="#" class="app-store-link">
+                <ion-icon name="logo-google-playstore"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="app-store-link">
+                <ion-icon name="logo-apple"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Info</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">+254 (0) 712345678</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">example@gmail,com</p>
+          </li>
+
+          <li>
+            <address class="footer-list-item">XXX, Lavington , Nairobi</address>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Opening Hours</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Monday-Friday: 08:00-22:00</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Tuesday 4PM: Till Mid Night</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Saturday: 10:00-16:00</p>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright-text">
+          &copy; 2026 <a href="https://sngueny.netlify.app" class="copyright-link">Shadrack Ngueny</a> All Rights Reserved.
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

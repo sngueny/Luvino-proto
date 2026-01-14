@@ -1,0 +1,28 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Server files
+server/.env
+server/node_modules/
+server/npm-debug.log
+server/yarn-error.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build/dist
+dist/
+build/
+
+# Dependencies
+node_modules/

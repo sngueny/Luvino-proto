@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rider Dashboard - Luvino</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="index.html" class="logo">Luvino<span class="span">.</span></a>
+      </h1>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="nav-item">
+            <a href="#dashboard" class="navbar-link active" data-nav-link>Dashboard</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#assigned" class="navbar-link" data-nav-link>Assigned Orders</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#completed" class="navbar-link" data-nav-link>Completed Deliveries</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#navigation" class="navbar-link" data-nav-link>Navigation</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="header-btn-group">
+        <button class="btn btn-hover">Logout</button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Dashboard Overview -->
+    <section id="dashboard" class="section dashboard-section">
+      <div class="container">
+        <h2 class="h2 section-title">Rider Dashboard</h2>
+        <div class="dashboard-grid">
+          <div class="dashboard-card">
+            <h3>Today's Deliveries</h3>
+            <p>8</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Active Orders</h3>
+            <p>2</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Earnings Today</h3>
+            <p>$45.00</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Rating</h3>
+            <p>4.8/5</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assigned Orders -->
+    <section id="assigned" class="section assigned-section">
+      <div class="container">
+        <h2 class="h2 section-title">Assigned Orders</h2>
+        <div class="orders-list">
+          <div class="order-card">
+            <h4>Order #12345</h4>
+            <p>Store: Fast Food Corner</p>
+            <p>Customer: John Doe</p>
+            <p>Address: 123 Main St, New York</p>
+            <p>Items: Burger x2, Fries x1</p>
+            <p>Total: $15.00</p>
+            <button class="btn">Start Delivery</button>
+            <button class="btn">Contact Customer</button>
+          </div>
+          <div class="order-card">
+            <h4>Order #12346</h4>
+            <p>Store: Italian Delight</p>
+            <p>Customer: Jane Smith</p>
+            <p>Address: 456 Oak Ave, New York</p>
+            <p>Items: Pizza x1, Salad x1</p>
+            <p>Total: $22.50</p>
+            <button class="btn">Start Delivery</button>
+            <button class="btn">Contact Customer</button>
+          </div>
+          <!-- More orders -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Completed Deliveries -->
+    <section id="completed" class="section completed-section">
+      <div class="container">
+        <h2 class="h2 section-title">Completed Deliveries</h2>
+        <div class="deliveries-list">
+          <div class="delivery-card">
+            <h4>Order #12340</h4>
+            <p>Completed: 2 hours ago</p>
+            <p>Earnings: $5.00</p>
+            <p>Rating: 5/5</p>
+          </div>
+          <div class="delivery-card">
+            <h4>Order #12341</h4>
+            <p>Completed: Yesterday</p>
+            <p>Earnings: $4.50</p>
+            <p>Rating: 4/5</p>
+          </div>
+          <!-- More deliveries -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation System -->
+    <section id="navigation" class="section navigation-section">
+      <div class="container">
+        <h2 class="h2 section-title">Navigation System</h2>
+        <div class="navigation-container">
+          <div class="map-placeholder">
+            <p>Interactive Map Integration</p>
+            <p>Current Location: Your Position</p>
+            <p>Destination: Customer Address</p>
+            <p>Estimated Time: 15 mins</p>
+            <button class="btn">Get Directions</button>
+            <button class="btn">Call Customer</button>
+          </div>
+          <div class="navigation-details">
+            <h3>Route Details</h3>
+            <ul>
+              <li>Distance: 5.2 km</li>
+              <li>Traffic: Light</li>
+              <li>Best Route: Via Main St</li>
+            </ul>
+            <h3>Delivery Instructions</h3>
+            <p>Ring doorbell twice. Leave at door if no answer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top" style="background-image: url('./assets/images/footer-illustration.png')">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="" class="logo">Foodie<span class="span">.</span></a>
+
+          <p class="footer-text">
+            Lorep Ipsum is a widely use placeholder text.
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <p class="app-coming-soon">App coming Soon</p>
+
+          <ul class="app-store-list">
+
+            <li>
+              <a href="#" class="app-store-link">
+                <ion-icon name="logo-google-playstore"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="app-store-link">
+                <ion-icon name="logo-apple"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Info</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">+254 (0) 712345678</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">example@gmail,com</p>
+          </li>
+
+          <li>
+            <address class="footer-list-item">XXX, Lavington , Nairobi</address>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Opening Hours</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Monday-Friday: 08:00-22:00</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Tuesday 4PM: Till Mid Night</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Saturday: 10:00-16:00</p>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright-text">
+          &copy; 2026 <a href="https://sngueny.netlify.app" class="copyright-link">Shadrack Ngueny</a> All Rights Reserved.
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

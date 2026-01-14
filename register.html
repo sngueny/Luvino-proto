@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Luvino</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="back-arrow" aria-label="Back to Home">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </a>
+
+      <h1>
+        <a href="index.html" class="logo">Luvino<span class="span">.</span></a>
+      </h1>
+
+      <div class="header-btn-group">
+        <button class="search-btn" aria-label="Search" data-search-btn>
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+        <a href="register.html" class="btn btn-hover">Sign Up</a>
+
+        <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+          <span class="line top"></span>
+          <span class="line middle"></span>
+          <span class="line bottom"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 
+    - #REGISTER SECTION
+  -->
+
+  <main>
+    <section class="register-section section">
+      <div class="container">
+
+        <h2 class="h2 section-title">Sign In / Sign Up</h2>
+
+        <div class="tab-buttons">
+          <button class="tab-btn active" onclick="showTab('signin')">Sign In</button>
+          <button class="tab-btn" onclick="showTab('signup')">Sign Up</button>
+        </div>
+
+        <div class="tab-content" id="signin">
+          <form class="auth-form" onsubmit="handleSignIn(event)">
+            <select id="userTypeSignin" required>
+              <option value="">Select User Type</option>
+              <option value="customer">Customer</option>
+              <option value="store">Store</option>
+              <option value="rider">Rider</option>
+            </select>
+            <input type="text" placeholder="Email or Phone" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="btn">Sign In</button>
+          </form>
+        </div>
+
+        <div class="tab-content" id="signup" style="display:none;">
+          <div class="user-type">
+            <label><input type="radio" name="userType" value="user" checked onclick="showUserForm('user')"> User</label>
+            <label><input type="radio" name="userType" value="rider" onclick="showUserForm('rider')"> Rider</label>
+            <label><input type="radio" name="userType" value="store" onclick="showUserForm('store')"> Store</label>
+          </div>
+
+          <div class="signup-form" id="user-form">
+            <h3>Sign Up as User</h3>
+            <div class="signup-method">
+              <button type="button" class="method-btn active" onclick="showMethod('email')">Email</button>
+              <button type="button" class="method-btn" onclick="showMethod('google')">Google</button>
+              <button type="button" class="method-btn" onclick="showMethod('phone')">Phone</button>
+            </div>
+            <div class="method-content" id="email-method">
+              <form class="auth-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <div class="additional-info">
+                  <h4>Delivery Address</h4>
+                  <input type="text" placeholder="Street Address" required>
+                  <input type="text" placeholder="City" required>
+                  <input type="text" placeholder="State" required>
+                  <input type="text" placeholder="Zip Code" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+              </form>
+            </div>
+            <div class="method-content" id="google-method" style="display:none;">
+              <button class="btn">Sign Up with Google</button>
+            </div>
+            <div class="method-content" id="phone-method" style="display:none;">
+              <input type="tel" placeholder="Phone Number" required>
+              <button class="btn">Send OTP</button>
+            </div>
+          </div>
+
+          <div class="signup-form" id="rider-form" style="display:none;">
+            <h3>Sign Up as Rider</h3>
+            <form class="auth-form">
+              <input type="email" placeholder="Email" required>
+              <input type="tel" placeholder="Phone Number" required>
+              <input type="password" placeholder="Password" required>
+              <input type="password" placeholder="Confirm Password" required>
+              <div class="additional-info">
+                <h4>Rider Details</h4>
+                <input type="text" placeholder="Driving Licence Number" required>
+                <input type="text" placeholder="Motorbike Registration Number" required>
+                <input type="text" placeholder="ID Number" required>
+                <input type="text" placeholder="Motorcycle Brand" required>
+                <input type="text" placeholder="Motorcycle Color" required>
+              </div>
+              <button type="submit" class="btn">Register</button>
+            </form>
+          </div>
+
+          <div class="signup-form" id="store-form" style="display:none;">
+            <h3>Register Store</h3>
+            <form class="auth-form">
+              <input type="text" placeholder="Store Name" required>
+              <input type="email" placeholder="Email" required>
+              <input type="tel" placeholder="Phone Number" required>
+              <input type="text" placeholder="Store Address" required>
+              <input type="text" placeholder="City" required>
+              <input type="text" placeholder="State" required>
+              <input type="text" placeholder="Zip Code" required>
+              <textarea placeholder="Store Description"></textarea>
+              <button type="submit" class="btn">Register Store</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top" style="background-image: url('./assets/images/footer-illustration.png')">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="" class="logo">Foodie<span class="span">.</span></a>
+
+          <p class="footer-text">
+            Lorep Ipsum is a widely use placeholder text.
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <p class="app-coming-soon">App coming Soon</p>
+
+          <ul class="app-store-list">
+
+            <li>
+              <a href="#" class="app-store-link">
+                <ion-icon name="logo-google-playstore"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="app-store-link">
+                <ion-icon name="logo-apple"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Info</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">+254 (0) 712345678</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">example@gmail,com</p>
+          </li>
+
+          <li>
+            <address class="footer-list-item">XXX, Lavington , Nairobi</address>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Opening Hours</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Monday-Friday: 08:00-22:00</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Tuesday 4PM: Till Mid Night</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Saturday: 10:00-16:00</p>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright-text">
+          &copy; 2026 <a href="https://sngueny.netlify.app" class="copyright-link">Shadrack Ngueny</a> All Rights Reserved.
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    function showTab(tab) {
+      document.getElementById('signin').style.display = tab === 'signin' ? 'block' : 'none';
+      document.getElementById('signup').style.display = tab === 'signup' ? 'block' : 'none';
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    function showUserForm(type) {
+      document.getElementById('user-form').style.display = type === 'user' ? 'block' : 'none';
+      document.getElementById('rider-form').style.display = type === 'rider' ? 'block' : 'none';
+      document.getElementById('store-form').style.display = type === 'store' ? 'block' : 'none';
+    }
+
+    function showMethod(method) {
+      document.querySelectorAll('.method-content').forEach(content => content.style.display = 'none');
+      document.getElementById(method + '-method').style.display = 'block';
+      document.querySelectorAll('.method-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    function handleSignIn(event) {
+      event.preventDefault();
+      const userType = document.getElementById('userTypeSignin').value;
+      if (userType === 'customer') {
+        window.location.href = 'customer-dashboard.html';
+      } else if (userType === 'store') {
+        window.location.href = 'store-dashboard.html';
+      } else if (userType === 'rider') {
+        window.location.href = 'rider-dashboard.html';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

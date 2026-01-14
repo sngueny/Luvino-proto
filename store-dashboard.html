@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Dashboard - Luvino</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="index.html" class="logo">Luvino<span class="span">.</span></a>
+      </h1>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="nav-item">
+            <a href="#dashboard" class="navbar-link active" data-nav-link>Dashboard</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#inventory" class="navbar-link" data-nav-link>Inventory</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#orders" class="navbar-link" data-nav-link>Orders</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#payments" class="navbar-link" data-nav-link>Payments</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="header-btn-group">
+        <button class="btn btn-hover">Logout</button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Dashboard Overview -->
+    <section id="dashboard" class="section dashboard-section">
+      <div class="container">
+        <h2 class="h2 section-title">Store Dashboard</h2>
+        <div class="dashboard-grid">
+          <div class="dashboard-card">
+            <h3>Total Orders</h3>
+            <p>45</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Pending Orders</h3>
+            <p>8</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Revenue Today</h3>
+            <p>KES250.00</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Available Riders</h3>
+            <p>12</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inventory Management -->
+    <section id="inventory" class="section inventory-section">
+      <div class="container">
+        <h2 class="h2 section-title">Inventory Management</h2>
+        <button class="btn" onclick="showAddItemForm()">Add New Item</button>
+        <div id="add-item-form" style="display:none;" class="add-item-form">
+          <form>
+            <input type="text" placeholder="Item Name" required>
+            <input type="text" placeholder="Description">
+            <input type="number" placeholder="Price" step="0.01" required>
+            <input type="number" placeholder="Stock Quantity" required>
+            <input type="file" accept="image/*">
+            <button type="submit" class="btn">Add Item</button>
+          </form>
+        </div>
+        <div class="inventory-grid">
+          <div class="inventory-item">
+            <img src="./assets/images/item1.jpg" alt="Item">
+            <h4>Burger</h4>
+            <p>KES5.99</p>
+            <p>Stock: 20</p>
+            <button class="btn">Edit</button>
+            <button class="btn">Delete</button>
+          </div>
+          <!-- More items -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Orders Management -->
+    <section id="orders" class="section orders-section">
+      <div class="container">
+        <h2 class="h2 section-title">Orders Management</h2>
+        <div class="orders-tabs">
+          <button class="tab-btn active" onclick="showOrders('received')">Received Orders</button>
+          <button class="tab-btn" onclick="showOrders('assigned')">Assigned Orders</button>
+          <button class="tab-btn" onclick="showOrders('scheduled')">Scheduled Orders</button>
+        </div>
+        <div id="received-orders" class="orders-list">
+          <div class="order-card">
+            <h4>Order #12345</h4>
+            <p>Customer: John Doe</p>
+            <p>Items: Burger x2, Fries x1</p>
+            <p>Total: $15.00</p>
+            <button class="btn">Assign to Rider</button>
+          </div>
+          <!-- More orders -->
+        </div>
+        <div id="assigned-orders" class="orders-list" style="display:none;">
+          <div class="order-card">
+            <h4>Order #12346</h4>
+            <p>Assigned to: Rider ABC</p>
+            <p>Status: In Transit</p>
+          </div>
+        </div>
+        <div id="scheduled-orders" class="orders-list" style="display:none;">
+          <div class="order-card">
+            <h4>Order #12347</h4>
+            <p>Scheduled for: Tomorrow 2 PM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payments -->
+    <section id="payments" class="section payment-section">
+      <div class="container">
+        <h2 class="h2 section-title">Payment Integration</h2>
+        <div class="payment-summary">
+          <h3>Today's Earnings: $250.00</h3>
+          <p>Pending Payments: $50.00</p>
+        </div>
+        <div class="payment-methods">
+          <button class="btn payment-btn">Connect Stripe</button>
+          <button class="btn payment-btn">Connect PayPal</button>
+          <button class="btn payment-btn">Bank Transfer</button>
+        </div>
+        <div class="transactions">
+          <h3>Recent Transactions</h3>
+          <ul>
+            <li>Order #12345: $15.00 - Completed</li>
+            <li>Order #12344: $22.50 - Completed</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top" style="background-image: url('./assets/images/footer-illustration.png')">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="" class="logo">Foodie<span class="span">.</span></a>
+
+          <p class="footer-text">
+            Lorep Ipsum is a widely use placeholder text.
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+          <p class="app-coming-soon">App coming Soon</p>
+
+          <ul class="app-store-list">
+
+            <li>
+              <a href="#" class="app-store-link">
+                <ion-icon name="logo-google-playstore"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="app-store-link">
+                <ion-icon name="logo-apple"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Info</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">+254 (0) 712345678</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">example@gmail,com</p>
+          </li>
+
+          <li>
+            <address class="footer-list-item">XXX, Lavington , Nairobi</address>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Opening Hours</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Monday-Friday: 08:00-22:00</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Tuesday 4PM: Till Mid Night</p>
+          </li>
+
+          <li>
+            <p class="footer-list-item">Saturday: 10:00-16:00</p>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright-text">
+          &copy; 2026 <a href="https://sngueny.netlify.app" class="copyright-link">Shadrack Ngueny</a> All Rights Reserved.
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    function showAddItemForm() {
+      const form = document.getElementById('add-item-form');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function showOrders(type) {
+      document.getElementById('received-orders').style.display = type === 'received' ? 'block' : 'none';
+      document.getElementById('assigned-orders').style.display = type === 'assigned' ? 'block' : 'none';
+      document.getElementById('scheduled-orders').style.display = type === 'scheduled' ? 'block' : 'none';
+      document.querySelectorAll('.orders-tabs .tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+
+</html>
