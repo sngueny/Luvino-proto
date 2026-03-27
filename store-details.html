@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC Kenya - Luvino Store</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Additional inline styles for the store page specific needs */
+    .store-hero {
+      padding-top: 150px;
+      padding-bottom: 60px;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .store-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    .store-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .store-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid var(--white);
+      margin: 0 auto 20px;
+      background-color: var(--white);
+      object-fit: contain;
+    }
+    .store-title {
+      color: var(--white);
+      margin-bottom: 15px;
+    }
+    .store-stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      color: var(--white);
+      font-weight: var(--fw-500);
+      margin-bottom: 25px;
+    }
+    .store-stats-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .store-stats-item ion-icon {
+      color: var(--deep-saffron);
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="back-arrow" aria-label="Back to Home" style="color: var(--color); font-size: 2.5rem; display: flex; align-items: center;">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </a>
+
+      <h1>
+        <a href="index.html" class="logo" style="margin-left: 15px;">Luvino<span class="span">.</span></a>
+      </h1>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="nav-item">
+            <a href="index.html#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="customer-dashboard.html" class="navbar-link" data-nav-link>Dashboard</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-btn-group">
+        <button class="search-btn" aria-label="Search" data-search-btn>
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+        <a href="customer-dashboard.html#cart" class="btn btn-hover">View Cart</a>
+
+        <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+          <span class="line top"></span>
+          <span class="line middle"></span>
+          <span class="line bottom"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 
+    - #SEARCH BOX
+  -->
+
+  <div class="search-container" data-search-container>
+    <div class="search-box">
+      <input type="search" name="search" aria-label="Search within store" placeholder="Search menu..."
+        class="search-input">
+      <button class="search-submit" aria-label="Submit search" data-search-submit-btn>
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+    </div>
+    <button class="search-close-btn" aria-label="Cancel search" data-search-close-btn></button>
+  </div>
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #STORE HERO (Banner)
+      -->
+
+      <section class="store-hero banner flex-hero" style="background-image: url('./assets/images/hero-bg.jpg'); padding: 150px 0 60px;">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; position: relative; z-index: 1;">
+          
+          <!-- Column 1: Store Logistics & Info -->
+          <div class="hero-col hero-card" style="background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 20px; text-align: left; box-shadow: var(--shadow-2); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                <img src="./assets/images/food-menu-6.png" alt="KFC Logo" style="width: 80px; height: 80px; border-radius: 50%; object-fit: contain; background: #fff; box-shadow: var(--shadow-1);">
+                <div>
+                  <h2 class="h2 store-title" style="color: var(--rich-black-fogra-29); margin-bottom: 5px;">KFC Kenya</h2>
+                  <div class="rating-wrapper" style="font-size: 1.4rem; color: var(--deep-saffron); display: flex; align-items: center; gap: 5px;">
+                    <ion-icon name="star"></ion-icon>
+                    <span style="color: var(--sonic-silver); font-weight: 500;">4.8 (2.5k+)</span>
+                  </div>
+                </div>
+              </div>
+              <p style="color: var(--sonic-silver); font-size: 1.4rem; margin-bottom: 20px; line-height: 1.6;">
+                World famous fried chicken, delicious burgers, and combo meals perfect for sharing. Now delivering hot and fresh anywhere in Nairobi.
+              </p>
+            </div>
+            
+            <div class="store-stats-vertical" style="display: flex; flex-direction: column; gap: 15px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 1.4rem; padding-bottom: 10px; border-bottom: 1px solid rgba(0,0,0,0.1);">
+                <span style="display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--rich-black-fogra-29);"><ion-icon name="time-outline" style="color: var(--deep-saffron); font-size: 1.4em;"></ion-icon> Open Hours</span>
+                <strong style="color: var(--sonic-silver); font-weight: 500;">9:00 AM - 11:00 PM</strong>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 1.4rem;">
+                <span style="display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--rich-black-fogra-29);"><ion-icon name="bicycle-outline" style="color: var(--deep-saffron); font-size: 1.4em;"></ion-icon> Delivery</span>
+                <strong style="color: var(--sonic-silver); font-weight: 500;">KES 150 <span style="font-size: 0.9em;">(25-35 mins)</span></strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Promo Section -->
+          <div class="hero-col promo-card" style="background: linear-gradient(135deg, var(--deep-saffron), var(--dark-orange)); padding: 30px; border-radius: 20px; color: var(--white); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; text-align: left; box-shadow: var(--shadow-2);">
+            <div style="position: relative; z-index: 2;">
+              <div class="badge" style="position: static; display: inline-block; margin-bottom: 15px; background: var(--white); color: var(--dark-orange); font-size: 1.2rem; font-weight: 700; padding: 5px 12px; border-radius: 30px;">Ends Sunday</div>
+              <h3 class="h2" style="color: var(--white); margin-bottom: 10px; font-size: 3.5rem; line-height: 1.1; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">20% OFF</h3>
+              <p style="font-size: 1.6rem; font-weight: 500; margin-bottom: 25px; max-width: 80%; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">On all Family Buckets this Weekend!</p>
+              <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; background: rgba(0,0,0,0.2); padding: 8px 15px; border-radius: 30px; width: max-content;">
+                <ion-icon name="timer-outline" style="font-size: 1.6rem;"></ion-icon>
+                <span style="font-size: 1.3rem;">Promo ends in 2 days</span>
+              </div>
+            </div>
+            <img src="./assets/images/promo-2.png" alt="Promo" style="position: absolute; right: -30px; bottom: -30px; width: 220px; opacity: 0.95; transform: rotate(-10deg);">
+          </div>
+
+          <!-- Column 3: Creative Section (Trending Now) -->
+          <div class="hero-col creative-card" style="position: relative; border-radius: 20px; overflow: hidden; background: var(--white); box-shadow: var(--shadow-2); min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <img src="./assets/images/food-menu-2.png" alt="Trending Item" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; filter: brightness(0.9);" class="hover-scale" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="position: relative; z-index: 2; background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%); padding: 30px; text-align: left; color: var(--white); width: 100%;">
+              <div class="badge" style="background: var(--cinnabar); display: inline-block; padding: 5px 12px; border-radius: 30px; font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; position: static;">🔥 Trending Now</div>
+              <h3 class="h3" style="color: var(--white); margin-bottom: 5px; font-size: 2.2rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">Zinger Stacker Meal</h3>
+              <p style="margin-bottom: 20px; font-size: 1.4rem; color: #eee; text-shadow: 1px 1px 2px rgba(0,0,0,0.4);">The most loved burger this month.</p>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 2rem; font-weight: 700; color: var(--deep-saffron); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">KES 850</span>
+                <a href="register.html" class="btn btn-hover" style="--height: 40px; --padding-inline: 20px; font-size: 1.4rem; border-radius: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">Order Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #STORE MENU
+      -->
+
+      <section class="section food-menu" id="store-menu">
+        <div class="container">
+
+          <p class="section-subtitle">Discover</p>
+
+          <h2 class="h2 section-title">
+            Our <span class="span">Menu</span>
+          </h2>
+
+          <ul class="fiter-list" style="margin-top: 30px;">
+            <li>
+              <button class="filter-btn active">All Items</button>
+            </li>
+            <li>
+              <button class="filter-btn">Best Sellers</button>
+            </li>
+            <li>
+              <button class="filter-btn">Combo Meals</button>
+            </li>
+            <li>
+              <button class="filter-btn">Sides & Extras</button>
+            </li>
+            <li>
+              <button class="filter-btn">Beverages</button>
+            </li>
+          </ul>
+
+          <!-- Bestsellers Section -->
+          <h3 class="h3" style="text-align: left; margin-bottom: 20px;">Best Sellers 🔥</h3>
+          <ul class="food-menu-list">
+
+            <li>
+              <div class="food-menu-card">
+
+                <div class="card-banner">
+                  <img src="./assets/images/food-menu-1.png" width="300" height="300" loading="lazy"
+                    alt="Streetwise 2" class="w-100">
+
+                  <div class="badge">Hot</div>
+
+                  <button class="btn food-menu-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+                </div>
+
+                <div class="wrapper">
+                  <p class="category">Combo Meals</p>
+
+                  <div class="rating-wrapper">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </div>
+
+                <h3 class="h3 card-title">Streetwise 2</h3>
+                <p style="margin-bottom: 15px; display: -webkit-box; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.4rem;">
+                  2 pieces of delicious Original Recipe chicken with regular chips.
+                </p>
+
+                <div class="price-wrapper">
+                  <data class="price">KES 450.00</data>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="food-menu-card">
+
+                <div class="card-banner">
+                  <img src="./assets/images/food-menu-5.png" width="300" height="300" loading="lazy"
+                    alt="Family Bucket" class="w-100">
+
+                  <div class="badge">-10% Offer</div>
+
+                  <button class="btn food-menu-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+                </div>
+
+                <div class="wrapper">
+                  <p class="category">Combo Meals</p>
+
+                  <div class="rating-wrapper">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <h3 class="h3 card-title">12 PC Family Bucket</h3>
+                <p style="margin-bottom: 15px; display: -webkit-box; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.4rem;">
+                  12 Pieces of chicken, two family size chips, and a 2L Soda. Perfect for friends & family.
+                </p>
+
+                <div class="price-wrapper">
+                  <data class="price" value="2500">KES 2,250.00</data>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="food-menu-card">
+
+                <div class="card-banner">
+                  <img src="./assets/images/food-menu-2.png" width="300" height="300" loading="lazy"
+                    alt="Zinger Burger" class="w-100">
+
+                  <button class="btn food-menu-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+                </div>
+
+                <div class="wrapper">
+                  <p class="category">Burgers</p>
+
+                  <div class="rating-wrapper">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+                </div>
+
+                <h3 class="h3 card-title">Zinger Burger Meal</h3>
+                <p style="margin-bottom: 15px; display: -webkit-box; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.4rem;">
+                  Crunchy, spicy chicken fillet with fresh lettuce and mayo inside a sesame seed bun, plus regular chips and a soda.
+                </p>
+
+                <div class="price-wrapper">
+                  <data class="price">KES 750.00</data>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <!-- Sides & Beverages Section -->
+          <h3 class="h3" style="text-align: left; margin-top: 50px; margin-bottom: 20px;">Drinks & Extras</h3>
+          <ul class="food-menu-list">
+
+            <li>
+              <div class="food-menu-card" style="padding: 20px;">
+                <div style="display: flex; gap: 20px; align-items: center; text-align: left;">
+                  <img src="./assets/images/food-menu-4.png" width="100" height="100" alt="Large Chips" style="border-radius: 10px;">
+                  <div style="flex-grow: 1;">
+                    <h4 class="h4">Large Chips</h4>
+                    <p style="font-size: 1.3rem; margin-top: 5px;">Crispy golden potato fries</p>
+                    <p style="font-weight: bold; margin-top: 10px; color: var(--deep-saffron);">KES 250.00</p>
+                  </div>
+                  <button class="btn btn-hover" style="height: 40px; padding-inline: 15px; font-size: 2rem;" onclick="alert('Added!')">+</button>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="food-menu-card" style="padding: 20px;">
+                <div style="display: flex; gap: 20px; align-items: center; text-align: left;">
+                  <img src="./assets/images/promo-2.png" width="100" height="100" alt="Coca Cola Soda" style="border-radius: 10px;">
+                  <div style="flex-grow: 1;">
+                    <h4 class="h4">Coca-Cola (500ml)</h4>
+                    <p style="font-size: 1.3rem; margin-top: 5px;">Chilled refreshment</p>
+                    <p style="font-weight: bold; margin-top: 10px; color: var(--deep-saffron);">KES 150.00</p>
+                  </div>
+                  <button class="btn btn-hover" style="height: 40px; padding-inline: 15px; font-size: 2rem;" onclick="alert('Added!')">+</button>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer store-footer">
+    <div class="footer-top">
+      <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+        
+        <!-- Store Identity -->
+        <div class="footer-brand">
+          <a href="#" class="logo" style="color: var(--rich-black-fogra-29); font-size: 3.2rem;">KFC Kenya<span class="span" style="color: var(--deep-saffron);">.</span></a>
+          <p class="footer-text">
+            World famous fried chicken, delicious burgers, and combo meals.
+          </p>
+          <ul class="social-list">
+            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          </ul>
+        </div>
+
+        <!-- Store Contact & Location -->
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Store Info</p></li>
+          <li>
+            <address class="footer-list-item" style="display: flex; gap: 10px; align-items: flex-start;">
+              <ion-icon name="location-outline" style="font-size: 1.5em; flex-shrink: 0; color: var(--deep-saffron);"></ion-icon>
+              <span>Waiyaki Way, Westlands<br>Nairobi, Kenya</span>
+            </address>
+          </li>
+          <li>
+            <a href="tel:+254711222333" class="footer-list-item" style="display: flex; gap: 10px; align-items: center; justify-content: flex-start;">
+              <ion-icon name="call-outline" style="font-size: 1.5em; flex-shrink: 0; color: var(--deep-saffron);"></ion-icon>
+              <span>+254 (0) 711 222 333</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@kfc.ke" class="footer-list-item" style="display: flex; gap: 10px; align-items: center; justify-content: flex-start;">
+              <ion-icon name="mail-outline" style="font-size: 1.5em; flex-shrink: 0; color: var(--deep-saffron);"></ion-icon>
+              <span>info@kfc.ke</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Emergency & Customer Care -->
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Customer Care</p></li>
+          <li>
+            <p class="footer-list-item" style="display: flex; gap: 10px; align-items: flex-start;">
+              <ion-icon name="headset-outline" style="font-size: 1.5em; flex-shrink: 0; color: var(--deep-saffron);"></ion-icon>
+              <span><strong>Support:</strong> +254 (0) 799 888 777<br>Available 24/7</span>
+            </p>
+          </li>
+          <li>
+            <p class="footer-list-item" style="display: flex; gap: 10px; align-items: flex-start;">
+              <ion-icon name="alert-circle-outline" style="font-size: 1.5em; flex-shrink: 0; color: var(--cinnabar);"></ion-icon>
+              <span><strong>Emergency/Issues:</strong><br>+254 (0) 733 444 555</span>
+            </p>
+          </li>
+          <li>
+             <p class="footer-list-item" style="display: flex; gap: 10px; align-items: center; justify-content: flex-start;">
+              <ion-icon name="time-outline" style="font-size: 1.5em; flex-shrink: 0; color: var(--deep-saffron);"></ion-icon>
+              <span><strong>Hours:</strong> 9:00 AM - 11:00 PM</span>
+            </p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- Store-specific Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright-text">
+          &copy; 2026 KFC Kenya. Maintained by <a href="https://luvino.com" class="copyright-link">Luvino Delivery</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

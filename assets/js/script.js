@@ -90,3 +90,34 @@ window.addEventListener("scroll", function () {
   }
 
 });
+
+
+
+/**
+ * filter stores
+ */
+
+const filterBtns = document.querySelectorAll("[data-filter-btn]");
+const filterCards = document.querySelectorAll("[data-filter-card]");
+
+if (filterBtns.length > 0 && filterCards.length > 0) {
+  let lastClickedFilterBtn = filterBtns[0];
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", function () {
+      lastClickedFilterBtn.classList.remove("active");
+      this.classList.add("active");
+      lastClickedFilterBtn = this;
+
+      const filterValue = this.dataset.filterBtn;
+
+      filterCards.forEach(card => {
+        if (filterValue === "all" || filterValue === card.dataset.filterCard) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+}

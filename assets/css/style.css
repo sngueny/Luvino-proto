@@ -640,8 +640,10 @@ body.active { overflow: hidden; }
 }
 
 .about-img {
-  max-width: max-content;
-  margin-inline: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .about-banner .abs-img {
@@ -849,10 +851,15 @@ body.active { overflow: hidden; }
 
 .cta-banner {
   position: relative;
-  aspect-ratio: 1 / 0.9;
+  margin-top: 40px;
 }
 
-.cta-img { transform: scale(1.3) translateY(60px); }
+.cta-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
 
 .cta-banner .abs-img {
   top: 20px;
@@ -1490,7 +1497,7 @@ textarea.input-field {
 
   .cta :is(.section-title, .btn) { margin-inline: 0; }
 
-  .cta-img { transform: scale(1.3) translate(90px, 20px); }
+  .cta-img { transform: none; }
 
 
 
@@ -1656,7 +1663,7 @@ textarea.input-field {
    * CTA
    */
 
-  .cta-img { transform: scale(1.4) translate(20px, 40px); }
+  .cta-img { transform: none; }
 
   .cta-banner .abs-img { left: -50px; }
 
