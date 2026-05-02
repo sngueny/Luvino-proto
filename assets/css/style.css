@@ -212,6 +212,12 @@ body.active { overflow: hidden; }
   height: var(--height, 45px);
   padding-inline: var(--padding-inline, 35px);
   transition: var(--transition-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  width: max-content;
 }
 
 .btn-hover {
@@ -760,13 +766,17 @@ body.active { overflow: hidden; }
   top: calc(50% + 15px);
   left: 50%;
   transform: translate(-50%, 0);
-  min-width: max-content;
+  width: max-content;
   --bg-color: var(--cinnabar);
-  width: 60%;
   --height: 40px;
-  --padding-inline: 20px;
+  --padding-inline: 25px;
   opacity: 0;
   transition: var(--transition-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .food-menu-btn:is(:hover, :focus) { --bg-color: var(--deep-saffron); }

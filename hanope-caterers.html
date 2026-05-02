@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanope Caterers - Luvino Delivery</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Premium Catering Styles */
+    :root {
+      --gold-premium: #d4af37;
+      --dark-premium: #1a1a1a;
+      --light-premium: #f9f9f9;
+    }
+
+    body {
+      background-color: var(--light-premium);
+    }
+
+    .catering-hero {
+      padding-top: 180px;
+      padding-bottom: 120px;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/images/hero-bg.jpg') center/cover;
+      color: var(--white);
+      text-align: center;
+      position: relative;
+    }
+
+    .catering-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--gold-premium);
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .catering-hero-subtitle {
+      font-size: 1.8rem;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .hero-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn-gold {
+      background-color: var(--gold-premium);
+      color: var(--dark-premium);
+      font-weight: 700;
+      border: 2px solid var(--gold-premium);
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.6rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gold:hover {
+      background-color: transparent;
+      color: var(--gold-premium);
+    }
+
+    .btn-outline-gold {
+      background-color: transparent;
+      color: var(--gold-premium);
+      font-weight: 700;
+      border: 2px solid var(--gold-premium);
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.6rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-gold:hover {
+      background-color: var(--gold-premium);
+      color: var(--dark-premium);
+    }
+
+    /* Dynamic Booking Form */
+    .booking-section {
+      padding: 80px 0;
+      background-color: var(--white);
+    }
+
+    .section-title-premium {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      text-align: center;
+      color: var(--dark-premium);
+      margin-bottom: 50px;
+    }
+
+    .booking-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .booking-header {
+      background: var(--dark-premium);
+      color: var(--gold-premium);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .booking-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+    }
+
+    .booking-form {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 15px 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      background: #fdfdfd;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--gold-premium);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    }
+
+    .form-label {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--dark-premium);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .special-meals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .checkbox-label input {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--gold-premium);
+    }
+
+    .submit-btn {
+      grid-column: 1 / -1;
+      background: var(--gold-premium);
+      color: var(--dark-premium);
+      border: none;
+      padding: 18px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+      background: #c19b2e;
+    }
+
+    /* Menu Sections */
+    .menu-section {
+      padding: 80px 0;
+      background-color: var(--light-premium);
+    }
+
+    .package-card {
+      background: var(--white);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+      border: 1px solid #eee;
+    }
+
+    .package-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .package-banner {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .package-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .package-content {
+      padding: 25px;
+      text-align: center;
+    }
+
+    .package-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--dark-premium);
+      margin-bottom: 10px;
+    }
+
+    .package-price {
+      font-size: 1.8rem;
+      color: var(--gold-premium);
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .package-desc {
+      font-size: 1.4rem;
+      color: var(--sonic-silver);
+      margin-bottom: 20px;
+    }
+
+    .package-btn {
+      display: inline-block;
+      padding: 10px 25px;
+      border: 1px solid var(--gold-premium);
+      color: var(--gold-premium);
+      border-radius: 30px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .package-btn:hover {
+      background: var(--gold-premium);
+      color: var(--white);
+    }
+
+    @media (max-width: 768px) {
+      .booking-form {
+        grid-template-columns: 1fr;
+      }
+      .catering-hero-title {
+        font-size: 3.5rem;
+      }
+      .hero-btn-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header style="background: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <div class="container">
+
+      <a href="index.html" class="back-arrow" aria-label="Back to Home" style="color: var(--dark-premium); font-size: 2.5rem; display: flex; align-items: center;">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </a>
+
+      <h1>
+        <a href="index.html" class="logo" style="margin-left: 15px; color: var(--dark-premium);">Luvino<span class="span" style="color: var(--gold-premium);">.</span></a>
+      </h1>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="nav-item">
+            <a href="index.html#home" class="navbar-link" data-nav-link style="color: var(--dark-premium);">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#book-catering" class="navbar-link" data-nav-link style="color: var(--dark-premium);">Book Catering</a>
+          </li>
+          <li class="nav-item">
+            <a href="#order-food" class="navbar-link" data-nav-link style="color: var(--dark-premium);">Order Food</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-btn-group">
+        <a href="customer-dashboard.html#cart" class="btn btn-gold" style="padding: 10px 20px; font-size: 1.4rem;">View Cart</a>
+
+        <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+          <span class="line top" style="background: var(--dark-premium);"></span>
+          <span class="line middle" style="background: var(--dark-premium);"></span>
+          <span class="line bottom" style="background: var(--dark-premium);"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO SECTION
+      -->
+      <section class="catering-hero" style="background-color: var(--dark-premium); background-image: linear-gradient(to right, rgba(26,26,26,0) 0%, rgba(26,26,26,0.8) 40%, rgba(26,26,26,1) 80%), url('./assets/images/banner-1.jpg'); background-position: center, left center; background-size: cover, auto 100%; background-repeat: no-repeat, no-repeat; padding: 120px 0; min-height: 80vh; display: flex; align-items: center; justify-content: flex-end;">
+        <div class="container" style="display: flex; justify-content: flex-end; width: 100%;">
+          
+          <div class="hero-content-box" style="display: flex; flex-direction: column; gap: 20px; max-width: 550px; text-align: left; padding: 40px; background: rgba(26, 26, 26, 0.7); backdrop-filter: blur(8px); border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            
+            <h2 class="catering-hero-title" style="margin-bottom: 0; text-align: left; font-size: 4.5rem;">Hanope Caterers</h2>
+            
+            <div style="display: flex; align-items: center; gap: 10px; color: var(--gold-premium); font-size: 1.5rem; font-weight: 500;">
+              <ion-icon name="time-outline" style="font-size: 2rem;"></ion-icon>
+              <span>Open Hours: 8:00 AM - 10:00 PM</span>
+            </div>
+            
+            <p class="catering-hero-subtitle" style="margin: 0; text-align: left; font-size: 1.5rem; color: #ddd;">
+              Elevating your events with exquisite culinary experiences. From intimate gatherings to grand corporate events, we deliver perfection on every plate.
+            </p>
+            
+            <div style="background: rgba(212, 175, 55, 0.1); border-left: 4px solid var(--gold-premium); padding: 15px; border-radius: 4px; margin-top: 5px;">
+              <h4 style="color: var(--gold-premium); font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 5px;">Current Promo 🌟</h4>
+              <p style="color: #fff; font-size: 1.3rem;">Get 15% off your first catering booking over KES 20,000!</p>
+            </div>
+            
+            <div class="hero-btn-group" style="justify-content: flex-start; margin-top: 15px;">
+              <a href="#book-catering" class="btn-gold" style="padding: 12px 25px; font-size: 1.4rem;">Book Catering</a>
+              <a href="#order-food" class="btn-outline-gold" style="padding: 12px 25px; font-size: 1.4rem;">Order Food</a>
+            </div>
+            
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- 
+        - #BOOKING FORM SECTION
+      -->
+      <section id="book-catering" class="booking-section">
+        <div class="container">
+          <h2 class="section-title-premium">Request a Catering Quote</h2>
+          
+          <div class="booking-wrapper">
+            <div class="booking-header">
+              <h3>Let's Plan Your Event</h3>
+              <p style="font-size: 1.4rem; margin-top: 10px; color: #eee;">Fill out the details below and our team will get back to you within 24 hours.</p>
+            </div>
+            
+            <form class="booking-form" onsubmit="event.preventDefault(); alert('Your catering request has been successfully submitted! We will contact you shortly.');">
+              
+              <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-input" placeholder="e.g. John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-input" placeholder="e.g. +254 700 000 000" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-input" placeholder="e.g. john@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Event Type</label>
+                <select class="form-input" required>
+                  <option value="" disabled selected>Select event type</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="corporate">Corporate Event</option>
+                  <option value="birthday">Birthday Party</option>
+                  <option value="anniversary">Anniversary</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Event Date & Time</label>
+                <input type="datetime-local" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Number of Guests</label>
+                <input type="number" class="form-input" placeholder="e.g. 50" min="10" required>
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label">Special Dietary Requirements (Optional)</label>
+                <div class="special-meals-grid">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="diet" value="vegetarian"> Vegetarian
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="diet" value="vegan"> Vegan
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="diet" value="pescatarian"> Pescatarian
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="diet" value="gluten-free"> Gluten-Free
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group full-width" id="allergies-group">
+                <label class="form-label">Food Allergies / Specific Intolerances</label>
+                <input type="text" class="form-input" placeholder="Please list any specific allergies (e.g. Nuts, Shellfish)...">
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label">Additional Event Details</label>
+                <textarea class="form-input" rows="4" placeholder="Tell us more about your event theme, preferred cuisines, or any special requests..."></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Submit Booking Request</button>
+
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #CATERING PACKAGES
+      -->
+      <section class="menu-section" style="background-color: var(--white);">
+        <div class="container">
+          <h2 class="section-title-premium" style="margin-bottom: 20px;">Signature Catering Packages</h2>
+          <p style="text-align: center; font-size: 1.6rem; color: var(--sonic-silver); margin-bottom: 50px;">Curated menus designed to impress your guests.</p>
+          
+          <ul class="food-menu-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            
+            <li>
+              <div class="package-card">
+                <div class="package-banner">
+                  <img src="./assets/images/promo-5.png" alt="Silver Platter" onerror="this.src='./assets/images/banner-1.jpg'">
+                </div>
+                <div class="package-content">
+                  <h3 class="package-title">Silver Platter</h3>
+                  <div class="package-price">KES 2,500 / person</div>
+                  <p class="package-desc">A selection of 3 appetizers, 2 main courses, 2 side dishes, and a dessert option. Perfect for corporate lunches.</p>
+                  <button class="package-btn" onclick="document.querySelector('#book-catering').scrollIntoView({behavior: 'smooth'})">Request Quote</button>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="package-card" style="border-color: var(--gold-premium); transform: scale(1.05); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);">
+                <div class="package-banner">
+                  <img src="./assets/images/promo-1.png" alt="Gold Buffet" onerror="this.src='./assets/images/banner-2.jpg'">
+                  <div class="badge" style="position: absolute; top: 20px; left: 20px; background: var(--gold-premium); color: #fff; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 1.2rem;">Most Popular</div>
+                </div>
+                <div class="package-content">
+                  <h3 class="package-title">Gold Buffet</h3>
+                  <div class="package-price">KES 4,500 / person</div>
+                  <p class="package-desc">Premium selection featuring 5 appetizers, live carving station, 4 main courses, assorted salads, and a deluxe dessert bar.</p>
+                  <button class="package-btn" style="background: var(--gold-premium); color: var(--white);" onclick="document.querySelector('#book-catering').scrollIntoView({behavior: 'smooth'})">Request Quote</button>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="package-card">
+                <div class="package-banner">
+                  <img src="./assets/images/promo-2.png" alt="Platinum Gala" onerror="this.src='./assets/images/banner-3.jpg'">
+                </div>
+                <div class="package-content">
+                  <h3 class="package-title">Platinum Gala</h3>
+                  <div class="package-price">KES 7,000 / person</div>
+                  <p class="package-desc">Exquisite fine dining experience with a 5-course plated meal, premium seafood, customized menu planning, and dedicated service staff.</p>
+                  <button class="package-btn" onclick="document.querySelector('#book-catering').scrollIntoView({behavior: 'smooth'})">Request Quote</button>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+
+      <!-- 
+        - #ORDER FOOD SECTION
+      -->
+      <section id="order-food" class="section food-menu">
+        <div class="container">
+          <p class="section-subtitle" style="color: var(--gold-premium);">A La Carte</p>
+          <h2 class="h2 section-title" style="color: var(--dark-premium);">
+            Order <span class="span" style="color: var(--gold-premium);">Meals</span> Now
+          </h2>
+          <p class="section-text">
+            Craving our signature dishes? Order individual meals for quick delivery right to your doorstep.
+          </p>
+
+          <ul class="food-menu-list" style="margin-top: 40px;">
+
+            <li>
+              <div class="food-menu-card">
+                <div class="card-banner">
+                  <img src="./assets/images/food-menu-1.png" width="300" height="300" loading="lazy" alt="Grilled Salmon" class="w-100">
+                  <button class="btn food-menu-btn" style="background: var(--gold-premium);" onclick="alert('Added to Cart!')">Add to Cart</button>
+                </div>
+                <div class="wrapper">
+                  <p class="category">Seafood</p>
+                  <div class="rating-wrapper" style="color: var(--gold-premium);">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </div>
+                <h3 class="h3 card-title">Grilled Salmon Fillet</h3>
+                <p style="margin-bottom: 15px; font-size: 1.4rem;">With lemon butter sauce and asparagus.</p>
+                <div class="price-wrapper">
+                  <data class="price" style="color: var(--gold-premium);">KES 1,800</data>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="food-menu-card">
+                <div class="card-banner">
+                  <img src="./assets/images/food-menu-2.png" width="300" height="300" loading="lazy" alt="Beef Wellington" class="w-100">
+                  <button class="btn food-menu-btn" style="background: var(--gold-premium);" onclick="alert('Added to Cart!')">Add to Cart</button>
+                </div>
+                <div class="wrapper">
+                  <p class="category">Beef</p>
+                  <div class="rating-wrapper" style="color: var(--gold-premium);">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+                </div>
+                <h3 class="h3 card-title">Classic Beef Wellington</h3>
+                <p style="margin-bottom: 15px; font-size: 1.4rem;">Tender beef coated in mushroom duxelles.</p>
+                <div class="price-wrapper">
+                  <data class="price" style="color: var(--gold-premium);">KES 2,200</data>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="food-menu-card">
+                <div class="card-banner">
+                  <img src="./assets/images/food-menu-3.png" width="300" height="300" loading="lazy" alt="Vegan Buddha Bowl" class="w-100">
+                  <button class="btn food-menu-btn" style="background: var(--gold-premium);" onclick="alert('Added to Cart!')">Add to Cart</button>
+                </div>
+                <div class="wrapper">
+                  <p class="category">Vegan</p>
+                  <div class="rating-wrapper" style="color: var(--gold-premium);">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+                </div>
+                <h3 class="h3 card-title">Vegan Truffle Risotto</h3>
+                <p style="margin-bottom: 15px; font-size: 1.4rem;">Creamy cashew base with wild mushrooms.</p>
+                <div class="price-wrapper">
+                  <data class="price" style="color: var(--gold-premium);">KES 1,500</data>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer store-footer" style="background: var(--dark-premium);">
+    <div class="container" style="display: flex; flex-direction: column; gap: 40px; color: #fff; padding: 60px 15px;">
+      
+      <!-- Line 1: Quick Links -->
+      <div class="footer-line" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 30px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <h4 style="color: var(--gold-premium); font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 20px;">Quick Links</h4>
+        <ul style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; list-style: none;">
+          <li><a href="index.html" style="color: #ccc; font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='var(--gold-premium)'" onmouseout="this.style.color='#ccc'">Home</a></li>
+          <li><a href="#book-catering" style="color: #ccc; font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='var(--gold-premium)'" onmouseout="this.style.color='#ccc'">Book Catering</a></li>
+          <li><a href="#order-food" style="color: #ccc; font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='var(--gold-premium)'" onmouseout="this.style.color='#ccc'">Order Food</a></li>
+          <li><a href="#" style="color: #ccc; font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='var(--gold-premium)'" onmouseout="this.style.color='#ccc'">Our Menu</a></li>
+          <li><a href="#" style="color: #ccc; font-size: 1.5rem; transition: color 0.3s;" onmouseover="this.style.color='var(--gold-premium)'" onmouseout="this.style.color='#ccc'">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Line 2: Newsletter -->
+      <div class="footer-line" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 30px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <h4 style="color: var(--gold-premium); font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px;">Subscribe to our Newsletter</h4>
+        <p style="color: #ccc; font-size: 1.4rem; margin-bottom: 20px;">Get the latest updates on our exclusive menus and catering promos.</p>
+        <form style="display: flex; gap: 10px; max-width: 450px; width: 100%;" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+          <input type="email" placeholder="Enter your email address" required style="flex-grow: 1; padding: 12px 20px; border-radius: 30px; border: 1px solid #444; background: #222; color: #fff; font-size: 1.4rem; outline: none;">
+          <button type="submit" class="btn-gold" style="padding: 12px 25px; border-radius: 30px; font-size: 1.4rem; cursor: pointer;">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Line 3: Contact Details -->
+      <div class="footer-line" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <h4 style="color: var(--gold-premium); font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 20px;">Contact Details</h4>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+          <div style="display: flex; align-items: center; gap: 10px; color: #ccc; font-size: 1.5rem;">
+            <ion-icon name="location-outline" style="color: var(--gold-premium); font-size: 2rem;"></ion-icon>
+            <span>123 Culinary Ave, Nairobi</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; color: #ccc; font-size: 1.5rem;">
+            <ion-icon name="call-outline" style="color: var(--gold-premium); font-size: 2rem;"></ion-icon>
+            <a href="tel:+254700000000" style="color: #ccc;" onmouseover="this.style.color='var(--gold-premium)'" onmouseout="this.style.color='#ccc'">+254 700 000 000</a>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; color: #ccc; font-size: 1.5rem;">
+            <ion-icon name="mail-outline" style="color: var(--gold-premium); font-size: 2rem;"></ion-icon>
+            <a href="mailto:info@hanope.com" style="color: #ccc;" onmouseover="this.style.color='var(--gold-premium)'" onmouseout="this.style.color='#ccc'">info@hanope.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="footer-bottom" style="background: #111; padding: 20px 0; text-align: center;">
+      <div class="container">
+        <p class="copyright-text" style="color: #888; margin: 0;">
+          &copy; 2026 Hanope Caterers. Maintained by <a href="https://luvino.com" class="copyright-link" style="color: var(--gold-premium);">Luvino Delivery</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn style="background: var(--gold-premium); color: var(--dark-premium);">
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
